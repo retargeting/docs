@@ -1,4 +1,2 @@
-- [Release Notes](/docs/releases)
-- [Upgrade Guide](/docs/upgrade)
-- [Contribution Guide](/docs/contributions)
-- [API Documentation](/api)
+- [General](/plugins/custom/general)
+- [Set email](/plugins/custom/set-email)
