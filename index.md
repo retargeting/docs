@@ -1,2 +1,4 @@
 - [General](/plugins/custom/general)
 - [Set email](/plugins/custom/set-email)
+- [Send brand](/plugins/custom/send-brand)
+- [Send category](/plugins/custom/send-category)
