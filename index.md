@@ -1,3 +1,4 @@
+##### Overview
 - [General](/plugins/custom/general)
 - [Set email](/plugins/custom/set-email)
 - [Send brand](/plugins/custom/send-brand)
@@ -11,3 +12,14 @@
 - [Remove from cart](/plugins/custom/remove-from-cart)
 - [Save order](/plugins/custom/save-order)
 - [Send product](/plugins/custom/send-product)
+- [Set cart url](/plugins/custom/set-cart-url)
+- [Visit help page](/plugins/custom/visit-help-page)
+
+##### JSON Feed
+- [Product stock feed](/plugins/custom/product-feed)
+
+##### REST API
+- [REST API Client]()
+- [discount/create]()
+- [discount/save]()
+- [order/save]()
