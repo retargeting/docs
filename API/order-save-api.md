@@ -1,12 +1,13 @@
-#REST API: order/save
+# REST API: order/save
 Push an order to Retargeting.
 
-#Resource URLs
+# Resource URLs
 **JSON**: https://retargeting.biz/api/1.0/order/save.json
 
 **Serial**: https://retargeting.biz/api/1.0/order/save.serial
 
-#Parameters
+# Parameters
+
 |    **Parameter**    |    **Type**    |    **Required**    |    **Description**    |
 |---|---|---|---|
 |  order_no  |  Number or text  |  Required  |  Unique number of the order recorded  |
@@ -34,7 +35,7 @@ Products ordered are contained in the second parameter of the function, which is
 |  products.variation_code  |  Text  |  Required  |  variation code of sent product – for variation code format and other details see variations addToCart functions and setVariation. If the product does not have variation will send a empty string (no character string "")  |
 |	callback_function 	|	Function	|	Optional	|	With this parameter you can define a function that runs itself after the action's parent function executes.	|
 
-#Request Example
+# Request Example
 
 ``` javascript
 // 1. to receive a JSON response
@@ -117,7 +118,7 @@ $response = $client->order->save(
 );
 ```
 
-#Response Example
+# Response Example
 
 ``` javascript
 // JSON response example - valid request with order saved
