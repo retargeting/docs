@@ -2,3 +2,6 @@
 - [Set email](/plugins/custom/set-email)
 - [Send brand](/plugins/custom/send-brand)
 - [Send category](/plugins/custom/send-category)
+- [Add to cart](/plugins/custom/add-to-cart)
+- [Add to wishlist](/plugins/custom/add-to-wishlist)
+- [Checkout Ids](/plugins/custom/checkout-ids)
