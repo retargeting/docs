@@ -24,8 +24,7 @@ ra_params = {
     add_to_cart_button_id: 'add_to_cart_button_id',
     price_label_id: 'price_label_id',
 };
-var ra = document.createElement("script"); ra.type ="text/javascript"; ra.async = true; ra.src = ("https:" ==
-document.location.protocol ? "https://" : "http://") + "tracking.retargeting.biz/v3/rajs/" + ra_key + ".js";
+var ra = document.createElement("script"); ra.async = true; ra.src = "https://tracking.retargeting.biz/v3/rajs/" + ra_key + ".js";
 var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ra,s);})();
 </script>
 
