@@ -17,7 +17,7 @@ This code is loaded asynchronous, which means it won't slow down in any way the 
 
 ```js
 
-<script type="text/javascript">
+<script>
 (function(){
 ra_key = "your_retargeting_tracking_api_key";
 ra_params = {
