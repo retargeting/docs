@@ -1,11 +1,37 @@
 # **addToCart**
 
-#### *This function must be called every time a product is added to cart.*
-#### *If you redirect to another page (e.g. the checkout page) right after the user added the product to cart, the add to cart must be set in the function of the callback function, right after the data has been sent to Retargeting (see the examples of the addToCart function).*
-#### *If add to cart is possible in other pages too, other than in the product details page, you must first call the sendProduct function (for the product that will be added to cart) right before you call the addToCart function (see the examples of the addToCart function).*
-#### *In the following paragraphs of the addToCart function, we will talk about "variations" of the products. Variation of a product is the product properties group the user has to choose when he is willing to add a product to cart: color, size, capacity, etc. For example, an online fashion store can set a system based on color and size variations: "Y-32" (yellow color and size 32), "R-XS" (red color and size XS), "M" (size M) etc.*
+This function must be called every time a product is added to cart.
 
-    _ra.addToCart(product_id, quantity, {
+If you redirect to another page (e.g. the checkout page) right after the user added the product to cart, the add to cart must be set in the function of the callback function, right after the data has been sent to Retargeting (see the examples of the addToCart function).
+
+If add to cart is possible in other pages too, other than in the product details page, you must first call the sendProduct function (for the product that will be added to cart) right before you call the addToCart function (see the examples of the addToCart function).
+
+In the following paragraphs of the addToCart function, we will talk about "variations" of the products. Variation of a product is the product properties group the user has to choose when he is willing to add a product to cart: color, size, capacity, etc. For example, an online fashion store can set a system based on color and size variations: "Y-32" (yellow color and size 32), "R-XS" (red color and size XS), "M" (size M) etc.
+
+```js
+_ra.addToCart(product_id, quantity, {
+    "code": "var_code",
+    "stock": stock,
+    "details": {
+        "var_code_option": {
+            "category_name": "var_code_option_category_name",
+            "category": "var_code_option_category_unique_token",
+            "value": "var_code_option_value_name"
+        },
+        ...
+    }
+}, callback_function);
+```
+
+### OR executing scripts automatically when the page is loaded
+
+```js
+var _ra = _ra || {};
+
+_ra.addToCartInfo = {
+    "product_id": product_id,
+    "quantity": product_quantity,
+    "variation": {
         "code": "var_code",
         "stock": stock,
         "details": {
@@ -16,38 +42,19 @@
             },
             ...
         }
-    }, callback_function);
-	
-### *OR executing scripts automatically when the page is loaded*
-	
- 	var _ra = _ra || {};
-
-    _ra.addToCartInfo = {
-        "product_id": product_id,
-        "quantity": product_quantity, 
-        "variation": {
-            "code": "var_code",
-            "stock": stock,
-            "details": {
-                "var_code_option": {
-                    "category_name": "var_code_option_category_name",
-                    "category": "var_code_option_category_unique_token",
-                    "value": "var_code_option_value_name"
-                },
-                ...
-            }
-        }
-    };
-	
-    if (_ra.ready !== undefined) {
-        _ra.addToCart(
-            _ra.addToCartInfo.product_id,
-            _ra.addToCartInfo.quantity,
-            _ra.addToCartInfo.variation
-        );
     }
-	
-## **addToCart** function parameters
+};
+
+if (_ra.ready !== undefined) {
+    _ra.addToCart(
+        _ra.addToCartInfo.product_id,
+        _ra.addToCartInfo.quantity,
+        _ra.addToCartInfo.variation
+    );
+}
+```
+
+## addToCart function parameters
 
 |    **Parameter**    |    **Type**    |    **Required**    |    **Description**    |
 |---|---|---|---|
@@ -62,41 +69,45 @@
 |	variation.details.variation_code_option.value	|	Text	|	Required	|	Full name of the variation_code_option property code	|
 |	callback_function 	|	Function	|	Optional	|	With this parameter you can define a function that runs itself after the action's parent function executes.	|
 
-## **addToCart function examples**
+## Examples
 ----------
 
-#### *send add to cart event for a product without variation adding to cart is done in the product page*	
-	_ra.addToCart(50, 1, false, function() {
-        console.log("the informations have been sent");
-    });
+#### send add to cart event for a product without variation adding to cart is done in the product page
+
+```js
+_ra.addToCart(50, 1, false, function() {
+    console.log("the informations have been sent");
+});
+```
 	
-#### *executing scripts automatically when the page is loaded.*
-	
-	_ra.addToCartInfo = {
-        "product_id": 133,
-        "quantity": 1,
-        "variation": {
-            "code": "42-B",
-            "stock": true,
-            "details": {
-                "42": {
-                    "category_name": "Size",
-                    "category": "size",
-                    "value": "42"
-                },
-                "B": {
-                    "category_name": "Color",
-                    "category": "color",
-                    "value": "Black"
-                }
+#### executing scripts automatically when the page is loaded.
+```js
+_ra.addToCartInfo = {
+    "product_id": 133,
+    "quantity": 1,
+    "variation": {
+        "code": "42-B",
+        "stock": true,
+        "details": {
+            "42": {
+                "category_name": "Size",
+                "category": "size",
+                "value": "42"
+            },
+            "B": {
+                "category_name": "Color",
+                "category": "color",
+                "value": "Black"
             }
         }
-    };
-	
-    if (_ra.ready !== undefined) {
-        _ra.addToCart(
-            _ra.addToCartInfo.product_id,
-            _ra.addToCartInfo.quantity,
-            _ra.addToCartInfo.variation
-        );
-    }	
+    }
+};
+
+if (_ra.ready !== undefined) {
+    _ra.addToCart(
+        _ra.addToCartInfo.product_id,
+        _ra.addToCartInfo.quantity,
+        _ra.addToCartInfo.variation
+    );
+}
+```
