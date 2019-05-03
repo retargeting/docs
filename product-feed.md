@@ -17,7 +17,7 @@ In order for Retargeting to display only products available in stock you need to
 ```
 
 
-## Feed file examples
+## Example
 
 *In order to make the file smaller it is not necessary to send products with no stock*  
 
