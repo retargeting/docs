@@ -1,6 +1,6 @@
 # visitHelpPage
 
-#### This function must be called every time a visitor visits one of the Help Pages of the site (e.g. How to order?, FAQ, How I get the products?)
+This function must be called every time a visitor visits one of the Help Pages of the site (e.g. How to order?, FAQ, How I get the products?)
 
 ```js
 _ra.visitHelpPage(callback_function);

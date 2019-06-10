@@ -1,56 +1,57 @@
 # **sendProduct**
 
-#### *This function must be called every time a visitor clicks on a product details page.*
+This function must be called every time a visitor clicks on a product details page.
 
-	var _ra = _ra || {};
+```js
+var _ra = _ra || {};
 
-    _ra.sendProductInfo = {
-        "id": product_id,
-        "name": "product_name",
-        "url": "product_url",
-        "img": "product_main_image_src",
-        "price": product_price,
-        "promo": product_promotional_price,
-        "brand": {
-            "id": brand_id,
-            "name": "brand_name"
+_ra.sendProductInfo = {
+    "id": product_id,
+    "name": "product_name",
+    "url": "product_url",
+    "img": "product_main_image_src",
+    "price": product_price,
+    "promo": product_promotional_price,
+    "brand": {
+        "id": brand_id,
+        "name": "brand_name"
+    },
+    "category": [
+        {
+            "id": category_id,
+            "name": "category_name",
+            "parent": parent_category_id,
+            "breadcrumb": [
+                {
+                    "id": parent_category_id,
+                    "name": "parent_category_name",
+                    "parent": parent_of_parent_category_id
+                },
+                {
+                    "id": parent_of_parent_category_id,
+                    "name": "parent_of_parent_category_name",
+                    "parent": false
+                }
+            ]
         },
-        "category": [
-            {
-                "id": category_id,
-                "name": "category_name",
-                "parent": parent_category_id,
-                "breadcrumb": [
-                    {
-                        "id": parent_category_id,
-                        "name": "parent_category_name",
-                        "parent": parent_of_parent_category_id
-                    },
-                    {
-                        "id": parent_of_parent_category_id,
-                        "name": "parent_of_parent_category_name",
-                        "parent": false
-                    }
-                ]
-            },
-            ...
-        ],
-        "inventory": {
-            "variations": true,
-            "stock": {
-                "variation-code-1": true, 
-                "variation-code-2": false, 
-                "variation-code-3": true
-            }
+        ...
+    ],
+    "inventory": {
+        "variations": true,
+        "stock": {
+            "variation-code-1": true, 
+            "variation-code-2": false, 
+            "variation-code-3": true
         }
-    };
-	
-    if (_ra.ready !== undefined) {
-        _ra.sendProduct(_ra.sendProductInfo);
     }
+};
 
-## **sendProduct** function parameters
+if (_ra.ready !== undefined) {
+    _ra.sendProduct(_ra.sendProductInfo);
+}
+```
 
+## sendProduct function parameters
 
 |    **Parameter**    |    **Type**    |    **Required**    |    **Description**    |
 |---|---|---|---|
@@ -77,83 +78,82 @@
 |	inventory.stock	|	True/False/Object	|	Required	|	For product with variations, you should send an object with stock for each variations.	|
 |	callback_function	|	Function	|	Optional	|	With this parameter you can define a function that runs itself after the action’s parent function executes	|
 
+## sendProduct function examples
 
-----------
-
-## **sendProduct function examples**
-----------
-
-### *sending a product without brand, belonging to a category without parent and no variations*
+### sending a product without brand, belonging to a category without parent and no variations
 	
-	var _ra = _ra || {};
-    
-    _ra.sendProductInfo = {
-        "id": 244,
-        "name": "Full HD Sample TV",
-        "url": "http://site.com/tv/full-hd-sample-tv",
-        "img": "http://site.com/images/main-image-full-hd-sample-tv",
-        "price": 1899.90,
-        "promo": 1599.90,
-        "brand": false,
-        "category": [{
-            "id": 44,
-            "name": "TVs",
-            "parent": false
-        }],
-        inventory: {
-            "variations": false,
-            "stock": true
-        }
-    };
-	
-    if (_ra.ready !== undefined) {
-        _ra.sendProduct(_ra.sendProductInfo);
+```js
+var _ra = _ra || {};
+
+_ra.sendProductInfo = {
+    "id": 244,
+    "name": "Full HD Sample TV",
+    "url": "http://site.com/tv/full-hd-sample-tv",
+    "img": "http://site.com/images/main-image-full-hd-sample-tv",
+    "price": 1899.90,
+    "promo": 1599.90,
+    "brand": false,
+    "category": [{
+        "id": 44,
+        "name": "TVs",
+        "parent": false
+    }],
+    inventory: {
+        "variations": false,
+        "stock": true
     }
-	
-### *sending a product without discount, with brand, categories and variations*
-	
+};
 
-	var _ra = _ra || {};
+if (_ra.ready !== undefined) {
+    _ra.sendProduct(_ra.sendProductInfo);
+}
+```
 	
-    _ra.sendProductInfo = {
-        "id": 133,
-        "name": "Men sneakers",
-        "url": "http://site.com/tv/men-sneakers",
-        "img": "http://site.com/images/main-image-men-sneakers",
-        "price": 125.90,
-        "promo": 0,
-        "brand": {
-            "id": 88,
-            "name": "Sneakers Brand Name"
+### sending a product without discount, with brand, categories and variations
+	
+```js
+var _ra = _ra || {};
+
+_ra.sendProductInfo = {
+    "id": 133,
+    "name": "Men sneakers",
+    "url": "http://site.com/tv/men-sneakers",
+    "img": "http://site.com/images/main-image-men-sneakers",
+    "price": 125.90,
+    "promo": 0,
+    "brand": {
+        "id": 88,
+        "name": "Sneakers Brand Name"
+    },
+    "category": [
+        {
+            "id": 75,
+            "name": "Men footwear",
+            "parent": false,
+            "breadcrumb": [] 
         },
-        "category": [
-            {
-                "id": 75,
-                "name": "Men footwear",
-                "parent": false,
-                "breadcrumb": [] 
-            },
-            {
-                "id": 22,
-                "name": "Sport sneakers",
-                "parent": 21,
-                "breadcrumb": [
-                    {"id": 21, "name": "Sneakers", "parent": 20},
-                    {"id": 20, "name": "Shoes", "parent": false}
-                ]
-            }
-        ],
-        "inventory": {
-            "variations": true,
-            "stock": {
-                "42-B": true, 
-                "42-W": false, 
-                "43-B": true, 
-                "43-W": true
-            }
+        {
+            "id": 22,
+            "name": "Sport sneakers",
+            "parent": 21,
+            "breadcrumb": [
+                {"id": 21, "name": "Sneakers", "parent": 20},
+                {"id": 20, "name": "Shoes", "parent": false}
+            ]
         }
-    };
-	
-    if (_ra.ready !== undefined) {
-        _ra.sendProduct(_ra.sendProductInfo);
+    ],
+    "inventory": {
+        "variations": true,
+        "stock": {
+            "42-B": true, 
+            "42-W": false, 
+            "43-B": true, 
+            "43-W": true
+        }
     }
+};
+
+if (_ra.ready !== undefined) {
+    _ra.sendProduct(_ra.sendProductInfo);
+}
+```

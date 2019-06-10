@@ -1,9 +1,33 @@
-# **removeFromCart**
+# removeFromCart
 
-#### *This function must be called every time a product is removed from cart.*
-#### *In the following paragraphs of the removeFromCart function, we will talk about "variations" of the products. Variation of a product is the product's properties group the user has to choose when he is willing to remove a product from cart: color, size, capacity, etc. For example, an online fashion store can set a system based on color and size variations: "Y-32" (yellow color and size 32), "R-XS" (red color and size XS), "M" (size M) etc.*
+This function must be called every time a product is removed from cart.
 
-    _ra.removeFromCart(product_id, quantity, {
+In the following paragraphs of the removeFromCart function, we will talk about "variations" of the products. Variation of a product is the product's properties group the user has to choose when he is willing to remove a product from cart: color, size, capacity, etc. For example, an online fashion store can set a system based on color and size variations: "Y-32" (yellow color and size 32), "R-XS" (red color and size XS), "M" (size M) etc.
+
+```js
+_ra.removeFromCart(product_id, quantity, {
+    "code": "var_code",
+    "stock": stock,
+    "details": {
+        "var_code_option": {
+            "category_name": "var_code_option_category_name",
+            "category": "var_code_option_category_unique_token",
+            "value": "var_code_option_value_name"
+        },
+        ...
+    }
+}, callback_function);
+```
+	
+### executing scripts automatically when the page is loaded
+
+```js
+var _ra = _ra || {};
+
+_ra.removeFromCartInfo = {
+    "product_id": product_id,
+    "quantity": product_quantity, 
+    "variation": {
         "code": "var_code",
         "stock": stock,
         "details": {
@@ -14,38 +38,19 @@
             },
             ...
         }
-    }, callback_function);
-	
-### *OR executing scripts automatically when the page is loaded*
-
-	var _ra = _ra || {};
-    
-    _ra.removeFromCartInfo = {
-        "product_id": product_id,
-        "quantity": product_quantity, 
-        "variation": {
-            "code": "var_code",
-            "stock": stock,
-            "details": {
-                "var_code_option": {
-                    "category_name": "var_code_option_category_name",
-                    "category": "var_code_option_category_unique_token",
-                    "value": "var_code_option_value_name"
-                },
-                ...
-            }
-        }
-    };
-
-    if (_ra.ready !== undefined) {
-        _ra.removeFromCart(
-            _ra.removeFromCartInfo.product_id,
-            _ra.removeFromCartInfo.quantity,
-            _ra.removeFromCartInfo.variation
-        );
     }
+};
+
+if (_ra.ready !== undefined) {
+    _ra.removeFromCart(
+        _ra.removeFromCartInfo.product_id,
+        _ra.removeFromCartInfo.quantity,
+        _ra.removeFromCartInfo.variation
+    );
+}
+```
 	
-## **removeFromCart** function parameters
+## removeFromCart function parameters
 
 |    **Parameter**    |    **Type**    |    **Required**    |    **Description**    |
 |---|---|---|---|
@@ -59,41 +64,47 @@
 |	variation.details.variation_code_option.value	|	Text	|	Required	|	Full name of the variation_code_option property code	|
 |	callback_function 	|	Function	|	Optional	|	With this parameter you can define a function that runs itself after the action's parent function executes.	|
 
-## **addToCart function examples**
-----------
+## addToCart function examples
 
-#### *send remove from cart event for a product without variation removing from cart is done in the product page*	
-    _ra.removeFromCart(50, 1, false, function() {
-        console.log("the informations have been sent");
-    });
+
+#### send remove from cart event for a product without variation removing from cart is done in the product page
+
+```js
+_ra.removeFromCart(50, 1, false, function() {
+    console.log("the informations have been sent");
+});
+```
 	
-#### *executing scripts automatically when the page is loaded.*
+#### executing scripts automatically when the page is loaded.
 	
-	_ra.removeFromCartInfo = {
-        "product_id": 133,
-        "quantity": 1,
-        "variation": {
-            "code": "42-B",
-            "stock": true,
-            "details": {
-                "42": {
-                    "category_name": "Size",
-                    "category": "size",
-                    "value": "42"
-                },
-                "B": {
-                    "category_name": "Color",
-                    "category": "color",
-                    "value": "Black"
-                }
+```js
+_ra.removeFromCartInfo = {
+    "product_id": 133,
+    "quantity": 1,
+    "variation": {
+        "code": "42-B",
+        "stock": true,
+        "details": {
+            "42": {
+                "category_name": "Size",
+                "category": "size",
+                "value": "42"
+            },
+            "B": {
+                "category_name": "Color",
+                "category": "color",
+                "value": "Black"
             }
         }
-    };
-    
-    if (_ra.ready !== undefined) {
-        _ra.removeFromCart(
-            _ra.removeFromCartInfo.product_id,
-            _ra.removeFromCartInfo.quantity,
-            _ra.removeFromCartInfo.variation
-        );
-    }   
+    }
+};
+
+if (_ra.ready !== undefined) {
+    _ra.removeFromCart(
+        _ra.removeFromCartInfo.product_id,
+        _ra.removeFromCartInfo.quantity,
+        _ra.removeFromCartInfo.variation
+    );
+}
+```
+   
