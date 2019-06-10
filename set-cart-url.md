@@ -1,18 +1,20 @@
-# **setCartUrl**
+# setCartUrl
 
-#### *This function saves the url of shopcart page. If you do not use this function, the url of shopcart page is taken when the checkoutIds functions is called.*
+This function saves the url of shopcart page. If you do not use this function, the url of shopcart page is taken when the checkoutIds functions is called.
 
-	var _ra = _ra || {};
+```js
+var _ra = _ra || {};
 
-    _ra.setCartUrlInfo = {
-        "url": "shopcart_page_url"
-    };
-    
-    if (_ra.ready !== undefined) {
-        _ra.setCartUrl(_ra.setCartUrlInfo.url);
-    }
+_ra.setCartUrlInfo = {
+    "url": "shopcart_page_url"
+};
+
+if (_ra.ready !== undefined) {
+    _ra.setCartUrl(_ra.setCartUrlInfo.url);
+}
+```
 	
-## **setCartUrl** function parameters
+## setCartUrl function parameters
 
 The function has only one parameter.
 
@@ -21,14 +23,16 @@ The function has only one parameter.
 |  url  |  URL  |  Required  |  url of shopcart page  |
 
 
-## **setCartUrl function examples**
+## setCartUrl function examples
 
-    var _ra = _ra || {};
-    
-    _ra.setCartUrlInfo = {
-        "url": "http://site.com/shopcart-page"
-    };
-    
-    if (_ra.ready !== undefined) {
-        _ra.setCartUrl(_ra.setCartUrlInfo.url);
-    }
+```js
+var _ra = _ra || {};
+
+_ra.setCartUrlInfo = {
+    "url": "http://site.com/shopcart-page"
+};
+
+if (_ra.ready !== undefined) {
+    _ra.setCartUrl(_ra.setCartUrlInfo.url);
+}
+```

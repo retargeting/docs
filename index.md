@@ -8,7 +8,6 @@
 - [Checkout Ids](/plugins/custom/checkout-ids)
 - [Click image](/plugins/custom/click-image)
 - [Comment on product](/plugins/custom/comment-on-product)
-- [Like Facebook](/plugins/custom/like-facebook)
 - [Remove from cart](/plugins/custom/remove-from-cart)
 - [Save order](/plugins/custom/save-order)
 - [Send product](/plugins/custom/send-product)
@@ -19,7 +18,9 @@
 - [Product stock feed](/plugins/custom/product-feed)
 
 ##### REST API
-- [REST API Client]()
-- [discount/create]()
-- [discount/save]()
-- [order/save]()
+- [REST API Client](/plugins/custom/rest-api-client)
+- [REST API Save Order](/plugins/custom/save-order-api)
+- [REST API Products](/plugins/custom/products-api)
+
+##### PHP SDK
+- [PHP SDK](https://github.com/retargeting/php-sdk)

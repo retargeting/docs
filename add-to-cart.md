@@ -23,7 +23,7 @@ _ra.addToCart(product_id, quantity, {
 }, callback_function);
 ```
 
-### OR executing scripts automatically when the page is loaded
+### Executing scripts automatically when the page is loaded
 
 ```js
 var _ra = _ra || {};

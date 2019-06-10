@@ -1,11 +1,6 @@
 # REST API: order/save
 Push an order to Retargeting.
 
-# Resource URLs
-**JSON**: https://retargeting.biz/api/1.0/order/save.json
-
-**Serial**: https://retargeting.biz/api/1.0/order/save.serial
-
 # Parameters
 
 |    **Parameter**    |    **Type**    |    **Required**    |    **Description**    |
@@ -37,8 +32,11 @@ Products ordered are contained in the second parameter of the function, which is
 
 # Request Example
 
-``` javascript
-// 1. to receive a JSON response
+
+## 1. To receive a JSON response
+
+```php
+<?php
 
 require_once "api/Retargeting_REST_API_Client.php";
 
@@ -70,16 +68,39 @@ $response = $client->order->save(
         "total" => 3800
     ),
     array(
-        array('id' => 307, 'quantity' => 5, 'price' => 500, 'variation_code' => ""),
-        array('id' => 105, 'quantity' => 1, 'price' => 150, 'variation_code' => "42-B"),
-        array('id' => 105, 'quantity' => 2, 'price' => 150, 'variation_code' => "42-W"),
-        array('id' => 48, 'quantity' => 10, 'price' => 85, 'variation_code' => "M")
+        array(
+            'id' => 307, 
+            'quantity' => 5,
+            'price' => 500,
+            'variation_code' => ""
+        ),
+        array(
+            'id' => 105,
+            'quantity' => 1,
+            'price' => 150,
+            'variation_code' => "42-B"
+        ),
+        array(
+            'id' => 105,
+            'quantity' => 2,
+            'price' => 150,
+            'variation_code' => "42-W"
+        ),
+        array(
+            'id' => 48,
+            'quantity' => 10,
+            'price' => 85,
+            'variation_code' => "M"
+        )
     )
 );
+```
 
 
-// 2. to receive a serialized response
+## 2. To receive a serialized response
 
+```php
+<?php
 require_once "api/Retargeting_REST_API_Client.php";
 
 // use your REST API KEY from Retargeting Admin Panel
@@ -110,19 +131,39 @@ $response = $client->order->save(
         "total" => 3800
     ),
     array(
-        array('id' => 307, 'quantity' => 5, 'price' => 500, 'variation_code' => ""),
-        array('id' => 105, 'quantity' => 1, 'price' => 150, 'variation_code' => "42-B"),
-        array('id' => 105, 'quantity' => 2, 'price' => 150, 'variation_code' => "42-W"),
-        array('id' => 48, 'quantity' => 10, 'price' => 85, 'variation_code' => "M")
+        array(
+            'id' => 307, 
+            'quantity' => 5,
+            'price' => 500,
+            'variation_code' => ""
+        ),
+        array(
+            'id' => 105,
+            'quantity' => 1,
+            'price' => 150,
+            'variation_code' => "42-B"
+        ),
+        array(
+            'id' => 105,
+            'quantity' => 2,
+            'price' => 150,
+            'variation_code' => "42-W"
+        ),
+        array(
+            'id' => 48,
+            'quantity' => 10,
+            'price' => 85,
+            'variation_code' => "M"
+        )
     )
 );
 ```
 
 # Response Example
 
-``` javascript
-// JSON response example - valid request with order saved
+## JSON response example - valid request with order saved
 
+```json
 {
     "version": "1.0",
     "status": 200,
@@ -131,9 +172,11 @@ $response = $client->order->save(
         "success": true
     }
 }
+```
 
-// JSON response example - valid request with error message
+## JSON response example - valid request with error message
 
+```json
 {
     "version": "1.0",
     "status": 200,
@@ -142,9 +185,11 @@ $response = $client->order->save(
         "error": "Order number exists"
     }
 }
+```
 
-// JSON response example - invalid request (error)
+## JSON response example - invalid request (error)
 
+```json
 {
     "version": "1.0",
     "status": "401",
