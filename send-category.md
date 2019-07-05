@@ -44,7 +44,7 @@ var _ra = _ra || {};
 _ra.sendCategoryInfo = {
     "id": 21,
     "name": "Sneakers",
-    "url": 'https://www.domain.com/men/shoes/sport-shoes'
+    "url": 'https://www.domain.com/men/shoes/sport-shoes',
     "parent": 20,
     "breadcrumb": [
         {"id": 20, "name": "Shoes", "parent": false}
@@ -64,7 +64,7 @@ var _ra = _ra || {};
 _ra.sendCategoryInfo = {
     "id": 22,
     "name": "Sport sneakers",
-    "url": 'https://www.domain.com/men/shoes/sport-shoes'
+    "url": 'https://www.domain.com/men/shoes/sport-shoes',
     "parent": 21,
     "breadcrumb": [
         {"id": 21, "name": "Sneakers", "parent": 20},
