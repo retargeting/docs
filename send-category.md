@@ -26,7 +26,7 @@ var _ra = _ra || {};
 _ra.sendCategoryInfo = {
     "id": 20,
     "name": "Shoes",
-    "url": 'https://www.domain.com/men/shoes/sport-shoes'
+    "url": 'https://www.domain.com/men/shoes/sport-shoes',
     "parent": false,
     "breadcrumb": [] 
 };
