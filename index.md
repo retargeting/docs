@@ -1,6 +1,7 @@
 ##### Overview
 - [General](/plugins/custom/general)
 - [Set email](/plugins/custom/set-email)
+- [Subscribe Email Info](/plugins/custom/subscribe-email-info)
 - [Send brand](/plugins/custom/send-brand)
 - [Send category](/plugins/custom/send-category)
 - [Add to cart](/plugins/custom/add-to-cart)
