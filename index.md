@@ -15,7 +15,7 @@
 - [Set cart url](/plugins/custom/set-cart-url)
 - [Visit help page](/plugins/custom/visit-help-page)
 
-##### JSON Feed
+##### CSV Feed
 - [Product stock feed](/plugins/custom/product-feed)
 
 ##### REST API
