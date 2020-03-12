@@ -2,6 +2,14 @@
 
 In order for Retargeting to display only products available in stock you need to create a CSV feed that returns some informations about products.
 
+## Requirements
+
+This feed must be accesible on your website (eg. https://www.mywebsite.com/feed.csv)
+
+## Recommendations
+
+If possible update this feed every 2h-4h or even create it realtime when retargeting will access the link.
+
 ## CSV Header
 
 ```csv
