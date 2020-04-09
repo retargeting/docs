@@ -21,7 +21,6 @@
 ##### REST API
 - [REST API Client](/plugins/custom/rest-api-client)
 - [REST API Save Order](/plugins/custom/save-order-api)
-- [REST API Products](/plugins/custom/products-api)
 
 ##### PHP SDK
 - [PHP SDK](https://github.com/retargeting/php-sdk)
