@@ -16,7 +16,7 @@
 - [Visit help page](/plugins/custom/visit-help-page)
 
 ##### CSV Feed
-- [Product stock feed](/plugins/custom/product-feed)
+- [Product Feed](/plugins/custom/product-feed)
 
 ##### REST API
 - [REST API Client](/plugins/custom/rest-api-client)
