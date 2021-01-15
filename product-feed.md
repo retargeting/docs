@@ -38,7 +38,7 @@ The following product details should be included in the extra data field.
 |margin| The product margin. If you don't want to add this information, send as null |
 |media_gallery| An array with all product images.|
 |categories| The full path category tree. Each category should be separated with \| |
-|variations| If product has variations like colour, size, all product variations goes here as an array of objects. Each variation object must have the following keys: `id`, `price`, `sale price`, `stock`, `margin`.|
+|variations| If product has variations like colour, size, all product variations goes here as an array of objects. Each variation object must have the following keys: `code`, `price`, `sale price`, `stock`, `margin`.|
 |in_supplier_stock| Set `true` or `false` if product is in supplier stock. For products with variations you need to specify the `in_supplier_stock` parameter for each variation. |
 
 
@@ -60,7 +60,7 @@ Here's a valid example of `extra data` field.
     ],
     "variations": [
         {
-            "id": "White-S",
+            "code": "White-S",
             "price": "190.00",
             "sale price": "190.00",
             "stock": 0,
@@ -68,7 +68,7 @@ Here's a valid example of `extra data` field.
             "in_supplier_stock": true
         },
         {
-            "id": "White-M",
+            "code": "White-M",
             "price": "190.00",
             "sale price": "190.00",
             "stock": 25,
@@ -76,7 +76,7 @@ Here's a valid example of `extra data` field.
             "in_supplier_stock": true
         },
         {
-            "id": "White-L",
+            "code": "White-L",
             "price": "190.00",
             "sale price": "190.00",
             "stock": 24,
