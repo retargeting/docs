@@ -98,7 +98,7 @@ _ra.sendProductInfo = {
         "name": "TVs",
         "parent": false
     }],
-    inventory: {
+    "inventory": {
         "variations": false,
         "stock": true
     }
